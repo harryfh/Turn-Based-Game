@@ -4,7 +4,7 @@
 // Define the paths as an object
 const paths = {
   crossroad: {
-    story: "Select you're gameplay type",
+    story: "Among an Open Season",
     choices: [
       { text: "Arcade Mode", nextPath: "aracadeMode" }, // Sends to Char Select 
       { text: "Adventure Mode", nextPath: "adventureMode" }

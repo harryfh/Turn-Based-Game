@@ -79,19 +79,3 @@ body,
 	align-items: center;
 	justify-content: center;
 }
-.header {
-	color: #eee;
-	top: 0;
-	left: 0;
-	transform: translate(-25%, -50%);
-}
-.header-text {
-	margin: 0;
-	font-size: 1.4rem;
-}
-.footer {
-	color: #eee;
-	top: 0;
-	right: 0;
-	transform: translate(25%, -50%);
-}
