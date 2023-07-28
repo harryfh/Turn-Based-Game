@@ -1,6 +1,9 @@
 # Turn-Based-Game
 Pure HTML/CSS/JS Game for Pass The Game Jam Day 4
 
+## Learn More About Pass The Game
+https://itch.io/jam/day-4
+
 Day 1: https://zbeehamz.itch.io/starcharters (download for assets)
 (This game was transformed from an unity project (day 1) to a html game (day 2) so I decided to continue developing the game using html, css and js)
 Day 2: https://oscarlundberg.itch.io/starcharters-battle
