@@ -1,13 +1,13 @@
 const GameManager = {
   init() {
-    const p1 = document.querySelector("#selected_id");
-    const p2 = document.querySelector("#ai_id");
+    const selected = document.querySelector("#selected_id");
+    const ai = document.querySelector("#ai_id");
 
     const selected_id = sessionStorage.getItem("selected_id");
     const ai_id = sessionStorage.getItem("ai_id");
     
     if (ai_id && selected_id) {
-        // Update the IDs of the player elements dynamically
+        // Update the IDs of the player elements dynamically from char select
         document.getElementById("selected_id").id = selected_id;
         document.getElementById("ai_id").id = ai_id;
       }
@@ -29,8 +29,8 @@ const GameManager = {
     this.toggleButtons(true);
     
     // Create player instances and bind them to their respective DOM elements
-    this.player1 = new Player(p1);
-    this.player2 = new AIPlayer(p2);
+    this.player1 = new Player(selected);
+    this.player2 = new AIPlayer(ai);
     
     // Set player/enemy relationships and specify whether each player is the main player (true) or enemy (false)
     this.player1.enemy = this.player2;

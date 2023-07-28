@@ -12,11 +12,11 @@
 	background-size: cover;
 	background-position: 50%;
 	background-repeat: no-repeat;
+	z-index: -1;
 }
 .fight-container {
 	display: flex;
 	align-items: center;
-	z-index: -1;
 	flex-direction: column;
 	justify-content: center;
 }
@@ -29,11 +29,11 @@
 	position: relative;
 }
 #player1 {
-	background-image: url(./assets/HeroBarStyle1v2.png);
+	background-image: url(./assets/MrWeenieHealth.png);
 }
 
 #player2 {
-	background-image: url(./assets/HeroBarStyle2.png);
+	background-image: url(./assets/amogusHealth.png);
 }
 
 progress::-webkit-progress-value {

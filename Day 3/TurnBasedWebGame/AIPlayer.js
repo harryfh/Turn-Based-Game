@@ -28,7 +28,7 @@ class AIPlayer extends Player {
     }
 
     // Scenario 4: If AI has low focus, prioritize gaining focus
-    if (this.focus <= 0.4) {
+    if (this.focus <= 0.6) {
       super.move(focusIdx);
       return;
     }

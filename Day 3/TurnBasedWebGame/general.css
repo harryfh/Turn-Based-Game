@@ -83,7 +83,7 @@ body,
 	color: #eee;
 	top: 0;
 	left: 0;
-	transform: translate(-25%, -150%);
+	transform: translate(-25%, -50%);
 }
 .header-text {
 	margin: 0;
@@ -93,5 +93,5 @@ body,
 	color: #eee;
 	top: 0;
 	right: 0;
-	transform: translate(25%, -150%);
+	transform: translate(25%, -50%);
 }
