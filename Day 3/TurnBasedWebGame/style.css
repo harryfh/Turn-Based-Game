@@ -12,13 +12,14 @@
 	background-size: cover;
 	background-position: 50%;
 	background-repeat: no-repeat;
+}
+.fight-container {
 	display: flex;
 	align-items: center;
 	z-index: -1;
 	flex-direction: column;
 	justify-content: center;
 }
-
 .player {
 	background-size: contain;
 	width: 100%;
@@ -45,7 +46,7 @@ progress::-webkit-progress-bar {
 }
 
 .bar {
-	width: 220px;
+	width: 208px;
 	height: 11px;
 	top: 16px;
 	left: 23px;
