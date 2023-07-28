@@ -1,286 +1,273 @@
-.cont {
-  backdrop-filter: blur(50%);
-  filter: blur(0px);
-  /* background-color: black; */
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-}
-
-@keyframes blur {
-  0% {
-    backdrop-filter: blur(3px);
-  }
-
-  100% {
-    backdrop-filter: blur(8px);
-  }
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("./assets/background.jpg");
-  background-size: cover;
-  animation-name: blur;
-  animation-duration: 12s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@media only screen and (max-height: 480px) {
-  body {
-    overflow-y: scroll !important;
-  }
-}
-
-@media only screen and (max-width: 680px) {
-  body {
-    overflow-x: scroll !important;
-  }
-}
-
-
-
-
-body,
-.cont {
-  overflow: hidden;
-}
-
 #game {
-  position: relative;
-  background-size: contain;
-  width: 700px;
-  height: 480px;
-  border: 5px solid black;
-  border-radius: 15px;
-  color: white;
-  background-image: url(./assets/Button3.png);
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  z-index: -1;
-  flex-direction: column;
+	position: relative;
+	background-size: contain;
+	font-family: Quantico;
+	font-weight: 400;
+	width: 700px;
+	height: 480px;
+	box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.1);
+	border-radius: 15px;
+	color: white;
+	background-image: url(./assets/Button3.png);
+	background-size: cover;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	z-index: -1;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .player {
-  background-image: url(./assets/HeroBarStyle1v2.png);
-  background-size: contain;
-  width: 100%;
-  background-repeat: no-repeat;
-  margin: 5%;
-  position: relative;
+	background-size: contain;
+	width: 100%;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	margin: 5%;
+	position: relative;
+}
+#player1 {
+	background-image: url(./assets/HeroBarStyle1v2.png);
 }
 
 #player2 {
-  background-image: url(./assets/HeroBarStyle2.png);
+	background-image: url(./assets/HeroBarStyle2.png);
 }
 
 progress::-webkit-progress-value {
-  transition: 1s width ease;
+	transition: 1s width ease;
 }
 
 progress::-webkit-progress-bar {
-  background-color: #00000000;
-  width: 100%;
+	background-color: #00000000;
+	width: 100%;
 }
 
-
-
 .bar {
-  width: 208px;
-  height: 11px;
-  top: 16px;
-  left: 23px;
-  position: relative;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -100;
+	width: 208px;
+	height: 11px;
+	top: 16px;
+	left: 23px;
+	position: relative;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: -100;
 }
 
 .bar.xp {
-  top: 13px;
-  height: 21px;
-  width: 245px;
+	top: 13px;
+	height: 21px;
+	width: 245px;
 }
 
 .bar.focus {
-  top: 16px;
-  height: 11px;
-  width: 139px;
-  left: 95px;
+	top: 16px;
+	height: 11px;
+	width: 139px;
+	left: 95px;
 }
 
 .bar.health {
-  top: 15px;
-  height: 27px;
-  width: 164px;
-  clip-path: polygon(0 0, 84% 0%, 100% 100%, 0% 100%);
-  left: 102px;
+	top: 15px;
+	height: 27px;
+	width: 164px;
+	clip-path: polygon(0 0, 84% 0%, 100% 100%, 0% 100%);
+	left: 102px;
 }
 
 .bar.focus::-webkit-progress-value {
-  background: linear-gradient(0deg, darkkhaki 0%, yellow 80%);
-  opacity: 0.9;
-  clip-path: polygon(0 0, 91% 0%, 100% 100%, 0% 100%);
+	background: linear-gradient(0deg, darkkhaki 0%, yellow 80%);
+	opacity: 0.9;
+	clip-path: polygon(0 0, 91% 0%, 100% 100%, 0% 100%);
 }
 
 .bar.health::-webkit-progress-value {
-  background: linear-gradient(0deg, darkgreen 0%, green 80%);
-  opacity: 0.9;
-  clip-path: polygon(0 0, 91% 0%, 100% 100%, 0% 100%);
+	background: linear-gradient(0deg, darkgreen 0%, green 80%);
+	opacity: 0.9;
+	clip-path: polygon(0 0, 91% 0%, 100% 100%, 0% 100%);
 }
 
 .bar.xp::-webkit-progress-value {
-  background: linear-gradient(0deg, rgb(0, 53, 53) 0%, darkcyan 80%);
-  opacity: 0.9;
-  clip-path: polygon(0 0, 100% 0%, 93% 100%, 0 100%);
+	background: linear-gradient(0deg, rgb(0, 53, 53) 0%, darkcyan 80%);
+	opacity: 0.9;
+	clip-path: polygon(0 0, 100% 0%, 93% 100%, 0 100%);
 }
 
 #win-menu {
-  display: none;
+	display: none;
 }
 
 .damage-text {
-  position: absolute;
-  font-size: 18px;
-  font-weight: bold;
-  color: red;
-  animation: damageAnimation 1.5s ease-out;
+	position: absolute;
+	font-size: 18px;
+	font-weight: bold;
+	color: red;
+	animation: damageAnimation 1.5s ease-out;
 }
 
 @keyframes damageAnimation {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
 }
 
 .heal-text {
-  position: absolute;
-  font-size: 18px;
-  font-weight: bold;
-  color: limegreen;
-  animation: damageAnimation 1.2s ease-out;
+	position: absolute;
+	font-size: 18px;
+	font-weight: bold;
+	color: limegreen;
+	animation: damageAnimation 1.2s ease-out;
 }
 
 @keyframes damageAnimation {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
 }
 
-
 @keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
 
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
+	10% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
 
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
+	20% {
+		transform: translate(-3px, 0px) rotate(1deg);
+	}
 
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
 
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
+	40% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
 
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
+	50% {
+		transform: translate(-1px, 2px) rotate(-1deg);
+	}
 
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
 
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
+	70% {
+		transform: translate(3px, 1px) rotate(-1deg);
+	}
 
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
+	80% {
+		transform: translate(-1px, -1px) rotate(1deg);
+	}
 
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
+	90% {
+		transform: translate(1px, 2px) rotate(0deg);
+	}
 
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
+	100% {
+		transform: translate(1px, -2px) rotate(-1deg);
+	}
 }
 
 @keyframes shine {
-  0% {
-    filter: hue-rotate(100deg);
-  }
-  25% {
-    filter: hue-rotate(0deg);
-  }
-  
-  50% {
-    filter: hue-rotate(100deg);
-  }
-  75% {
-    filter: hue-rotate(0deg);
-  }
-  
-  99% {
-    filter: hue-rotate(100deg);
-  }
-  100% {
-    filter: hue-rotate(0deg);
-  }
+	0% {
+		filter: hue-rotate(100deg);
+	}
+	25% {
+		filter: hue-rotate(0deg);
+	}
+
+	50% {
+		filter: hue-rotate(100deg);
+	}
+	75% {
+		filter: hue-rotate(0deg);
+	}
+
+	99% {
+		filter: hue-rotate(100deg);
+	}
+	100% {
+		filter: hue-rotate(0deg);
+	}
 }
 
-
-*[shake=true] {
-  animation: shake 0.5s;
-  animation-iteration-count: 3;
+*[shake="true"] {
+	animation: shake 0.5s;
+	animation-iteration-count: 3;
 }
 
-*[shine=true] {
-  animation: shine 0.5s;
-  animation-iteration-count: 3;
+*[shine="true"] {
+	animation: shine 0.5s;
+	animation-iteration-count: 3;
 }
 
-*[shake=true]>.bar {
-  z-index: -1 !important;
+*[shake="true"] > .bar {
+	z-index: -1 !important;
 }
 
 .portraits {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: relative;
-}
-
-.abilities {
-  margin-bottom: 35px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	position: relative;
 }
 
 *[disabled] {
-  background-color: grey !important;
-  opacity: 0.5;  
+	background-color: transparent !important;
+
+	color: #eeeeee3b;
+	opacity: 0.5;
+}
+
+.abilities {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 30px;
+	gap: 2rem;
+
+	background-position: 50%;
+	padding: 1rem;
+
+	border-radius: 8px;
+}
+.ability-btn {
+	border-radius: 8px;
+	box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.05);
+	padding: 1rem 2rem 1rem 2rem;
+	text-transform: uppercase;
+
+	transition: all 300ms ease;
+	border-style: none;
+	background-image: url(./assets/Button3.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ffffff00;
+	width: 140px;
+	height: 90%;
+	border-radius: 15px;
+}
+.ability-btn:hover {
+	box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.05);
+
+	transition: all 300ms ease;
 }

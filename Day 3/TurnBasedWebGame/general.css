@@ -1,0 +1,74 @@
+.cont {
+	backdrop-filter: blur(50%);
+	filter: blur(0px);
+	/* background-color: black; */
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+
+@keyframes blur {
+	0% {
+		backdrop-filter: blur(3px);
+	}
+
+	100% {
+		backdrop-filter: blur(8px);
+	}
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background-image: url("./assets/background.jpg");
+	background-size: cover;
+	animation-name: blur;
+	animation-duration: 12s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+@media only screen and (max-height: 480px) {
+	body {
+		overflow-y: scroll !important;
+	}
+}
+
+@media only screen and (max-width: 680px) {
+	body {
+		overflow-x: scroll !important;
+	}
+}
+
+body,
+.cont {
+	overflow: hidden;
+}
+.game_wrapper {
+	background-image: radial-gradient(
+		at top left,
+		rgba(238, 238, 238, 0.8) 25%,
+		rgba(238, 238, 238, 0.2) 50%,
+		#eee 75%,
+		transparent 100%
+	);
+	z-index: -1000;
+	padding: 2rem 4rem 2rem 4rem;
+	border-radius: 20px;
+	box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+	color: #eee;
+	font-weight: 700;
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+	font-family: "Germania One";
+	background-image: url(./assets/Button3.png);
+	background-size: stretch;
+	border-radius: 15px;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	display: flex;
+	box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.1);
+	padding: 1rem 2rem 0rem 2rem;
+	margin-bottom: 1rem;
+}
