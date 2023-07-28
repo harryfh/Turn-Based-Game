@@ -7,7 +7,7 @@ function selectCharacter(selected_char, ai_char) {
     sessionStorage.setItem("ai_id", ai_char);
   
     // Redirect to the next page after character selection
-    window.location.href = "adventure.html";
+    window.location.href = "game.html";
   }
   
   

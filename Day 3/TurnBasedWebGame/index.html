@@ -36,37 +36,32 @@
 			<div
 				class="game_wrapper flex-column d-flex justify-content-center align-items-center"
 			>
-				<div class="fight-container" id="game">
+				<div id="game">
 					<div class="header text-tag">
 						<h1 class="header-text">StarCharters: Battle</h1>
 					</div>
-					<div class="footer text-tag">
-						<h1 class="header-text">Pass The Game Jam: Day 4</h1>
-					</div>
+
 					<div class="choice-select">
-						<h1 id="story-text" class="story-text">Choose Your Charachter</h1>
-						<button
-							class="choice-button player1"
-							onclick="selectCharacter('player1','player2')"
-						>
-							<h3>Mr. Weenie</h3>
-							<img src="assets\MrWeeniePFP.png" alt="Character 1" />
+						<p id="story-text" class="story-text">
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+							officia nihil magni. Fugiat ipsum maxime iure ea ut odit aliquid
+							praesentium atque animi eaque optio maiores dolor temporibus,
+							perferendis cumque!
+						</p>
+
+						<button class="choice-button">
+							<h3 id="firstChoice">Go Right</h3>
 						</button>
-						<button
-							class="choice-button player2"
-							onclick="selectCharacter('player2','player1')"
-						>
-							<h3>Amogus</h3>
-							<img src="assets\amogusPFP.png" alt="Character 1" />
+						<button class="choice-button">
+							<h3 id="secondChoice">Go Left</h3>
 						</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Make sure to link your JavaScript file here -->
-	</body>
-	<script src="./audio.js"></script>
-	<script src="./utils.js"></script>
+		<script src="./audio.js"></script>
+		<script src="./utils.js"></script>
 
-	<script src="./char-select.js"></script>
+		<script src="./adventure.js"></script>
+	</body>
 </html>
