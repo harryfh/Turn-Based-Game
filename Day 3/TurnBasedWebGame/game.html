@@ -26,11 +26,10 @@
 			rel="stylesheet"
 		/>
 		<title>StarCharters: Battle</title>
-
-		<link rel="stylesheet" href="./char-select.css" />
 		<link rel="stylesheet" href="./style.css" />
 		<link rel="stylesheet" href="./general.css" />
 	</head>
+
 	<body>
 		<div class="cont d-flex justify-content-center align-items-center">
 			<div
@@ -40,27 +39,39 @@
 					<h1 class=".header-text">StarCharters: Battle</h1>
 				</div>
 				<div id="game">
-					<div class="character-select">
-						<button
-							class="character-button player1"
-							onclick="selectCharacter('player1','player2')"
-						>
-							<h3>Character 1</h3>
-							<img src="assets\HeroBarStyle1v2.png" alt="Character 1" />
-						</button>
-						<button
-							class="character-button player2"
-							onclick="selectCharacter('player2','player1')"
-						>
-							<h3>Character 2</h3>
-							<img src="assets\HeroBarStyle2.png" alt="Character 1" />
-						</button>
+					<div class="portraits">
+						<div class="player" id="selected_id">
+							<progress class="bar focus" value="1"></progress>
+							<progress class="bar health" value="1"></progress>
+							<progress class="bar xp" value="1"></progress>
+						</div>
+						<div class="player" id="ai_id">
+							<progress class="bar focus" value="1"></progress>
+							<progress class="bar health" value="1"></progress>
+							<progress class="bar xp" value="1"></progress>
+						</div>
+					</div>
+					<div id="win-menu">
+						<h1 id="winner-name">Player 1 Wins!</h1>
+					</div>
+					<div class="abilities">
+						<button class="ability-btn"></button>
+						<button class="ability-btn"></button>
+						<button class="ability-btn"></button>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Make sure to link your JavaScript file here -->
 	</body>
-
-	<script src="./char-select.js"></script>
 </html>
+
+<script src="./utils.js"></script>
+<script src="./abilities.js"></script>
+<script src="./game.js"></script>
+<script src="./audio.js"></script>
+<script src="./player.js"></script>
+<script src="./AIPlayer.js"></script>
+
+<script>
+	GameManager.init();
+</script>

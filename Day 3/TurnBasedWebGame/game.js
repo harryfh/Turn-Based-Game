@@ -1,8 +1,21 @@
 const GameManager = {
   init() {
-    const p1 = document.querySelector("#player1");
-    const p2 = document.querySelector("#player2");
+    const p1 = document.querySelector("#selected_id");
+    const p2 = document.querySelector("#ai_id");
+
+    const selected_id = sessionStorage.getItem("selected_id");
+    const ai_id = sessionStorage.getItem("ai_id");
     
+    if (ai_id && selected_id) {
+        // Update the IDs of the player elements dynamically
+        document.getElementById("selected_id").id = selected_id;
+        document.getElementById("ai_id").id = ai_id;
+      }
+    else {
+      document.getElementById("selected_id").id = "player1";
+      document.getElementById("ai_id").id = "player2";
+    }
+
     this.gameEnded = false;
 
     const winMenu = document.querySelector("#win-menu");
