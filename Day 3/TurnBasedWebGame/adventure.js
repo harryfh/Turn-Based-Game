@@ -1,6 +1,4 @@
-const storyElement = document.getElementById("story-text");
-const firstChoice = document.getElementById("firstChoice");
-const secondChoice = document.getElementById("secondChoice");
+
 
 
 // Define the paths as an object
@@ -52,38 +50,57 @@ const paths = {
     story: "Mr. Weenie leeps at you, biting off you're face. It seems you can't do anything elsee",
     choices: [{ text: "Punch Mr. Weenie", nextPath: "startFight" },{ text: "Kick Mr. Weenie", nextPath: "startFight" }]
   },
-  startFight: {
+  startFight: { // Goes to game
+    story: "",
+    choices: []
+  },
+  aracadeMode: {// Goes to charSelect
     story: "",
     choices: []
   }
 };
 
-let currentPath = "crossroad";
 
-function displayStory(path) {
-  storyElement.textContent = paths[path].story;
+// Function to add buttons dynamically based on choices
+function addButtons(choices) {
 
-  firstChoice.textContent = paths[path].choices[0].text;
-  secondChoice.textContent = paths[path].choices[1].text;
-  firstChoice.parentElement.addEventListener("click", () => choosePath(paths[path].choices[0]));
-  secondChoice.parentElement.addEventListener("click", () => choosePath(paths[path].choices[1]));
-}
+    const choicesContainer = document.getElementById("choices");
 
-function choosePath(choice) {
-    console.log(choice)
-  if (choice.nextPath) {
-    if (choice.nextPath == "startFight") {
-        window.location.href = "game.html";
-    }
-    if (choice.nextPath == "aracadeMode") {
+    choicesContainer.innerHTML = ""; // Clear any existing buttons
+    
+    choices.forEach(choice => {
+      const button = document.createElement("button");
+      button.textContent = choice.text;
+      button.classList.add("choice-button")
+      button.addEventListener("click", () => {
+        // Handle the button click event, e.g., go to the next path
+        goToNextPath(choice.nextPath);
+      });
+      choicesContainer.appendChild(button);
+    });
+  }
+  
+  // Function to handle the button click and move to the next path
+  function goToNextPath(nextPath) {
+    check_switch(nextPath)
+
+    const storyElement = document.getElementById("story-text");
+    storyElement.textContent = paths[nextPath].story;
+  
+  
+    const nextChoices = paths[nextPath].choices;
+    addButtons(nextChoices);
+  }
+  function check_switch(currentPath) {
+    if (currentPath == "aracadeMode") {
         window.location.href = "char_select.html";
     }
-
-    currentPath = choice.nextPath;
-    displayStory(currentPath);
-
+    if (currentPath == "startFight") {
+        window.location.href = "game.html";
+    }
   }
-}
+
+let currentPath = "crossroad";
 
 // Initialize the game with the first path
-displayStory(currentPath);
+goToNextPath(currentPath);
